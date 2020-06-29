@@ -1,4 +1,4 @@
-package com.cn;
+package com.cn.controller;
 
 import com.cn.domain.User;
 import com.cn.service.UserService;

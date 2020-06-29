@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: dev
+
+  #≈‰÷√ ˝æ›‘¥
+  datasource:
+    url: jdbc:mysql://192.168.137.4:3306/test
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 4
+    minIdle: 20
+    maxActive: 100
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    #exceptionSorter: true
+    testOnReturn: false
+    poolPreparedStatements: true
+    #filter: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+    useGlobalDataSourceStat: true
+    filters: stat
+
+mybatis:
+  typeAliasesPackage: com.cn.dao
+  mapperLocations: classpath:mapper/*.xml
